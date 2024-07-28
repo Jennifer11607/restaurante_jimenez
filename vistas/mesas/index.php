@@ -8,7 +8,7 @@
 <?php include_once '../../includes/navbar.php'?>
 
 <div class="container" style="margin-top: 1cm; width: 29cm; border-radius: 1px;  ">
-    <h1 class="text-center" style="font-family: fantasy;">NOMBRE DE LA PERSONA A RESERVAR</h1>
+    <h1 class="text-center" style="font-family: fantasy;">INGRESE LOS DATOS DE LA MESA QUE NECESITA</h1>
     <div class="row justify-content-center mb-3">
     <div class="container mt-5">
         <div class="row justify-content-center">
@@ -16,17 +16,27 @@
                 <form>
                     <input type="hidden" name="cli_id" id="cli_id">
                     <div class="form-group text-center">
-                        <label for="cli_nombre" class="form-label">Nombre</label>
-                        <input type="text" name="cli_nombre" id="cli_nombre" class="form-control " required>
+                        <label for="mesa_numero" class="form-label">¿Cuantas Mesas Necesita?</label>
+                        <input type="number" name="mesa_numero" id="mesa_numero" class="form-control " required>
                     </div>
                     <div class="form-group text-center">
-                        <label for="cli_apellido" class="form-label">Apellido</label>
-                        <input type="text" name="cli_apellido" id="cli_apellido" class="form-control" required>
+                        <label for="mesa_capacidad" class="form-label">¿Para Cuantas Personas?</label>
+                        <input type="number" name="mesa_capacidad" id="mesa_capacidad" class="form-control" required>
                     </div>
-                    <div class="form-group text-center">
-                        <label for="cli_telefono" class="form-label ">No. de Teléfono</label>
-                        <input type="text" name="cli_telefono" id="cli_telefono" class="form-control mb-2" required>
+
+                    <div class="row mb-3">
+                    <div class="col text-center">
+                    <label for="mesa_ubicacion">Ubicacion de la Mesa</label>
+                    <select name="mesa_ubicacion" id="mesa_ubicacion" class="form-select">
+                        <option selected>Seleccione</option>
+                            <option value="Parte Frontal">Parte Frontal</option>
+                            <option value="Primer Nivel">Primer Nivel</option>
+                            <option value="Segundo Nivel">Segundo Nivel</option>
+                            <option value="Terraza">Terraza</option>
+                    </select>
                     </div>
+                    </div>
+                    
                     <div class="row">
                         <div class="col text-center">
                             <button type="submit" id="btnGuardar" class="btn btn-primary btn-block btn-custom "><i class="bi bi-floppy"></i> Guardar</button>
@@ -52,21 +62,21 @@
     </div>
     <div class="row justify-content-center">
         <div class="col-lg-8 table-responsive">
-            <h2 class="text-center">Lista de Clientes</h2>
-            <table class="table table-bordered table-hover" id="tablaClientes">
+            <h2 class="text-center">Lista de Mesas</h2>
+            <table class="table table-bordered table-hover" id="tablaMesas">
                 <thead>
                     <tr>
                         <th>No.</th>
-                        <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th>Telefono</th>
+                        <th>No. de Mesas</th>
+                        <th>No. de personas</th>
+                        <th>Ubicacion</th>
                         <th>Modificar</th>
                         <th>Eliminar</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td colspan="5">No hay clientes</td>
+                        <td colspan="5">No hay Mesas</td>
                     </tr>
                 </tbody>
             </table>
@@ -74,7 +84,7 @@
     </div>
 </div>
 <script defer src="/restaurante_jimenez/src/js/funciones.js"></script>
-<script defer src="/restaurante_jimenez/src/js/clientes/index.js"></script>
+<script defer src="/restaurante_jimenez/src/js/mesas/index.js"></script>
 <?php include_once '../../includes/footer.php' ?>
 
 
