@@ -35,6 +35,7 @@ try {
                 case '2':
                     $ejecucion = $reservacion->modificar();
                     $mensaje = "Modificado correctamente";
+                    $codigo = 2;
                     break;
                     //crear caso  eliminar
                 case '3':
@@ -57,7 +58,7 @@ try {
             // http_response_code(200);
             $reservacion = new reservacion($_GET);
             $reservaciones = $reservacion->buscar();
-            echo json_encode($_GET);  //revisar que trae 
+            echo json_encode($reservaciones);  //revisar que trae 
 
             break;            
 

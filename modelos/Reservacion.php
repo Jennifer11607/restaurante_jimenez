@@ -34,7 +34,7 @@ class Reservacion extends Conexion
 
     public function buscar()
     {
-        $sql = "SELECT * from reservaciones where cita_situacion = 1 ";
+        $sql = "SELECT * from reservaciones where reser_situacion = 1 ";
 
         if ($this->reser_mesa != '') {
             $sql .= " and reser_mesa = '$this->reser_mesa' ";
@@ -77,7 +77,7 @@ class Reservacion extends Conexion
         // $sql .= " AND cita_fecha = '$this->cita_fecha' ";
         // }
 
-        
+
         $resultado = self::servir($sql);
         return $resultado;
     }

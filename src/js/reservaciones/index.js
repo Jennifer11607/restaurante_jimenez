@@ -97,6 +97,7 @@ console.log(url)
                 fragment.appendChild(tr)
             }
         } else {
+            
             console.log('error al cargar reservaciones');
             
             
@@ -151,8 +152,8 @@ const guardarReservacion = async (e) => {
                     }
                 });
 
-                getReservaciones(alerta = 'no');
                 formulario.reset();
+                getReservaciones(alerta = 'no');
             } else {
                 console.log('Error:', detalle);
                 Swal.fire({
@@ -211,11 +212,11 @@ const guardarReservacion = async (e) => {
 //funcion modificar
 const llenardatos = (reservacion) => {
 
-    formulario.reser_id.value = reservacion.reser_id
-    formulario.reser_mesa.value = reservacion.reser_mesa
-    formulario.reser_cliente.value = reservacion.reser_cliente
-    formulario.reser_fecha.value = reservacion.reser_fecha
-    formulario.reser_hora.value = reservacion.reser_hora
+    formulario.reser_id.value = reservacion.RESER_ID
+    formulario.reser_mesa.value = reservacion.RESER_MESA
+    formulario.reser_cliente.value = reservacion.RESER_CLIENTE
+    formulario.reser_fecha.value = reservacion.RESER_FECHA
+    formulario.reser_hora.value = reservacion.RESER_HORA
     btnBuscar.parentElement.style.display = 'none'
     btnGuardar.parentElement.style.display = 'none'
     btnLimpiar.parentElement.style.display = 'none'
