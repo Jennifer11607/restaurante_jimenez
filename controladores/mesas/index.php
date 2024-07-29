@@ -1,62 +1,75 @@
 <?php
 require '../../modelos/Mesa.php';
 header('Content-Type: application/json; charset=UTF-8');
+// Ejemplo de respuesta en PHP
+// header('Content-Type: application/json');
+// $response = array(
+//     'mensaje' => 'Error de conexión',
+//     'codigo' => 0,
+//     'detalle' => 'Detalles del error'
+// );
+// echo json_encode($response);
+// exit;
+
 
 $metodo = $_SERVER['REQUEST_METHOD'];
-$response = array(
-    'mensaje' => 'Error desconocido',
-    'codigo' => 0,
-    'detalle' => 'Detalles no especificados'
-);
+
 
 try {
     switch ($metodo) {
         case 'POST':
             $tipo = $_REQUEST['tipo'];
-            $mesa = new mesa($_POST);
+            $paciente = new mesa($_POST);
             switch ($tipo) {
                 case '1':
                     $ejecucion = $mesa->guardar();
                     $mensaje = "Guardado correctamente";
                     break;
+                    //aqui se creo el caso modificar
                 case '2':
                     $ejecucion = $mesa->modificar();
                     $mensaje = "Modificado correctamente";
                     break;
+                    //crear caso  eliminar
                 case '3':
                     $ejecucion = $mesa->eliminar();
                     $mensaje = "Eliminado correctamente";
-                    break;
+                        break;
+
                 default:
-                    throw new Exception("Tipo de operación no soportado");
+                    $mensaje = "Tipo de operación no válida";
+                    break;
             }
-            if ($ejecucion) {
-                $response['mensaje'] = $mensaje;
-                $response['codigo'] = 1;
-            } else {
-                $response['mensaje'] = 'Error al ejecutar operación';
-                $response['detalle'] = 'No se pudo ejecutar la operación solicitada';
-            }
+            http_response_code(200);
+            echo json_encode([
+                "mensaje" => $mensaje,
+                "codigo" => 1,
+            ]);
             break;
 
         case 'GET':
+            // http_response_code(200);
             $mesa = new mesa($_GET);
-            $resultado = $mesa->buscar();
-            if ($resultado) {
-                $response = $resultado;
-            } else {
-                $response['mensaje'] = 'No se encontraron resultados';
-                $response['codigo'] = 1;
-            }
-            break;
+            $mesas = $mesa->buscar();
+            echo json_encode($mesas);
+
+            break;            
 
         default:
-            throw new Exception("Método no soportado");
+            http_response_code(405);
+            echo json_encode([
+                "mensaje" => "Método no permitido",
+                "codigo" => 9,
+            ]);
+            break;
     }
 } catch (Exception $e) {
-    $response['mensaje'] = 'Error de ejecución';
-    $response['detalle'] = $e->getMessage();
+    http_response_code(500);
+    echo json_encode([
+        "detalle" => $e->getMessage(),
+        "mensaje" => "Error de ejecución",
+        "codigo" => 0,
+    ]);
 }
-
-echo json_encode($response);
 exit;
+

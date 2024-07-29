@@ -9,35 +9,25 @@ const formulario = document.querySelector('form')
 btnModificar.parentElement.style.display = 'none'
 btnCancelar.parentElement.style.display = 'none'
 
-const getMesas = async (alerta = 'si') => {
-    const numero = formulario.mesa_numero.value.trim();
-    const capacidad = formulario.mesa_capacidad.value.trim();
-    const ubicacion = formulario.mesa_ubicacion.value.trim();
-
-    // Validar los valores del formulario
-    if (!numero && !capacidad && (ubicacion === 'Seleccione' || !ubicacion)) {
-        console.log('Campos de búsqueda vacíos o inválidos');
-        return;
-    }
-
-    const url = `/restaurante_jimenez/controladores/mesas/index.php?mesa_numero=${numero}&mesa_capacidad=${capacidad}&mesa_ubicacion=${ubicacion}`;
+const getMesas = async (alerta='si') => {
+    const numero = formulario.mesa_numero.value.trim()
+    const capacidad = formulario.mesa_capacidad.value.trim()
+    const ubicacion = formulario.mesa_ubicacion.value.trim()
+    const url = `/restaurante_jimenez/controladores/mesas/index.php?mesa_numero=${numero}&mesa_capacidad=${capacidad}&mesa_ubicacion=${ubicacion}`
     const config = {
         method: 'GET'
-    };
-    
-    console.log(url);
-
+    }
+console.log(url)
     try {
         const respuesta = await fetch(url, config);
         const data = await respuesta.json();
         console.log(data);
 
-        tablaMesas.tBodies[0].innerHTML = '';
-        const fragment = document.createDocumentFragment();
+        tablaMesas.tBodies[0].innerHTML = ''
+        const fragment = document.createDocumentFragment()
         let contador = 1;
-
         if (respuesta.status == 200) {
-            if (alerta == 'si') {
+            if (alerta =='si') {
                 Swal.mixin({
                     toast: true,
                     position: "top-end",
@@ -45,70 +35,73 @@ const getMesas = async (alerta = 'si') => {
                     timer: 3000,
                     timerProgressBar: true,
                     icon: "success",
-                    title: 'Registros encontrados',
+                    title: 'Mesas encontradas',
                     didOpen: (toast) => {
                         toast.onmouseenter = Swal.stopTimer;
                         toast.onmouseleave = Swal.resumeTimer;
                     }
                 }).fire();
             }
+            
 
             if (data.length > 0) {
                 data.forEach(mesa => {
-                    const tr = document.createElement('tr');
-                    const celda1 = document.createElement('td');
-                    const celda2 = document.createElement('td');
-                    const celda3 = document.createElement('td');
-                    const celda4 = document.createElement('td');
-                    const celda5 = document.createElement('td');
-                    const celda6 = document.createElement('td');
-                    const buttonModificar = document.createElement('button');
-                    const buttonEliminar = document.createElement('button');
+                    const tr = document.createElement('tr')
+                    const celda1 = document.createElement('td')
+                    const celda2 = document.createElement('td')
+                    const celda3 = document.createElement('td')
+                    const celda4 = document.createElement('td')
+                    const celda5 = document.createElement('td')
+                    const celda6 = document.createElement('td')
+                    const buttonModificar = document.createElement('button')
+                    const buttonEliminar = document.createElement('button')
 
                     celda1.innerText = contador;
                     celda2.innerText = mesa.MESA_NUMERO;
                     celda3.innerText = mesa.MESA_CAPACIDAD;
                     celda4.innerText = mesa.MESA_UBICACION;
 
-                    buttonModificar.textContent = 'Modificar';
-                    buttonModificar.classList.add('btn', 'btn-warning', 'w-100');
-                    buttonModificar.addEventListener('click', () => llenardatos(mesa));
-                    buttonEliminar.textContent = 'Eliminar';
-                    buttonEliminar.classList.add('btn', 'btn-danger', 'w-100');
-                    buttonEliminar.addEventListener('click', () => eliminar(mesa));
 
-                    celda5.appendChild(buttonModificar);
-                    celda6.appendChild(buttonEliminar);
+                    buttonModificar.textContent = 'Modificar'
+                    buttonModificar.classList.add('btn', 'btn-warning', 'w-100')
+                    buttonModificar.addEventListener('click', () => llenardatos(mesa) )
+                    //evento eliminar
+                    buttonEliminar.textContent = 'Eliminar'
+                    buttonEliminar.classList.add('btn', 'btn-danger', 'w-100')
+                    buttonEliminar.addEventListener('click', () => eliminar(mesa) )
 
-                    tr.appendChild(celda1);
-                    tr.appendChild(celda2);
-                    tr.appendChild(celda3);
-                    tr.appendChild(celda4);
-                    tr.appendChild(celda5);
-                    tr.appendChild(celda6);
+                    celda5.appendChild(buttonModificar)
+                    celda6.appendChild(buttonEliminar)
+
+                    tr.appendChild(celda1)
+                    tr.appendChild(celda2)
+                    tr.appendChild(celda3)
+                    tr.appendChild(celda4)
+                    tr.appendChild(celda5)
+                    tr.appendChild(celda6)
                     fragment.appendChild(tr);
 
-                    contador++;
+                    contador++
                 });
+
             } else {
-                const tr = document.createElement('tr');
-                const td = document.createElement('td');
-                td.innerText = 'No hay Registros';
+                const tr = document.createElement('tr')
+                const td = document.createElement('td')
+                td.innerText = 'No hay mesas'
                 td.colSpan = 6;
 
-                tr.appendChild(td);
-                fragment.appendChild(tr);
+                tr.appendChild(td)
+                fragment.appendChild(tr)
             }
         } else {
-            console.log('error al cargar registros');
+            console.log('error al cargar mesas');
         }
 
-        tablaMesas.tBodies[0].appendChild(fragment);
+        tablaMesas.tBodies[0].appendChild(fragment)
     } catch (error) {
         console.log(error);
     }
 }
-
 
 
 //funcion guardar pacientes
@@ -155,7 +148,6 @@ const guardarMesa = async (e) => {
 
                 getMesas(alerta = 'no');
                 formulario.reset();
-                
             } else {
                 console.log('Error:', detalle);
                 Swal.fire({
@@ -214,7 +206,7 @@ const guardarMesa = async (e) => {
 //funcion modificar
 const llenardatos = (mesa) => {
 
-    formulario.mesa_id.value = mesa.MESA_ID
+    formulario.mesa_id.value = mesa.mesa_ID
     formulario.mesa_numero.value = mesa.MESA_NUMERO
     formulario.mesa_capacidad.value = mesa.MESA_CAPACIDAD
     formulario.mesa_ubicacion.value = mesa.MESA_UBICACION
@@ -315,6 +307,19 @@ const modificar = async(e) => {
     }
     btnModificar.disabled = false;
 
+    const llenardatos = (mesa) => {
+
+        formulario.mesa_id.value = mesa.MESA_ID
+        formulario.mesa_numero.value = mesa.MESA_NUMERO
+        formulario.mesa_capacidad.value = mesa.MESA_CAPACIDAD
+        formulario.mesa_ubicacion.value = mesa.MESA_UBICACION
+        btnBuscar.parentElement.style.display = 'none'
+        btnGuardar.parentElement.style.display = 'none'
+        btnLimpiar.parentElement.style.display = 'none'
+        btnModificar.parentElement.style.display = ''
+        btnCancelar.parentElement.style.display = ''
+    
+    }
 
 }
 
@@ -370,10 +375,8 @@ const eliminar = async (mesa) => {
                     showConfirmButton: false,
                     timer: 5000,
                 });
-
                 formulario.reset()
                 getMesas(alerta='no');
-
             } else {
                 console.log('Error:', detalle);
                 Swal.mixin({
