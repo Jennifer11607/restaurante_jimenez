@@ -17,7 +17,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-8 form-container" >
                 <form>
-                    <input type="hidden" name="mesa" id="mesa_id">
+                    <input type="hidden" name="mesa_id" id="mesa_id">
                     <div class="form-group text-center">
                         <label for="mesa_numero" class="form-label">¿Cuantas de mesas que necesita?</label>
                         <input type="number" name="mesa_numero" id="mesa_numero" class="form-control " required>
