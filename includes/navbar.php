@@ -7,10 +7,10 @@
                 <a class="navbar-brand mx-auto" href="#"><i class="bi bi-hospital"></i>  BURGESGIRL</a>
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/final_hospital_js/zulu/inicio.php"><i class="bi bi-house-fill"></i> INICIO</a>
+                        <a class="nav-link active" aria-current="page" href="/restaurante_jimenez/html/usuario.php"><i class="bi bi-house-fill"></i> INICIO</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/final_hospital_js/zulu/inicio.php"><i class="bi bi-house-fill"></i> R</a>
+                        <a class="nav-link active" aria-current="page" href="/final_hospital_js/zulu/inicio.php"><i class="bi bi-house-fill"></i> CLIENTES</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

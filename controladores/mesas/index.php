@@ -13,14 +13,17 @@ try {
                 case '1':
                     $ejecucion = $mesa->guardar();
                     $mensaje = "Guardado correctamente";
+                    $codigo = 1;
                     break;
                 case '2':
                     $ejecucion = $mesa->modificar();
                     $mensaje = "Modificado correctamente";
+                    $codigo = 2;
                     break;
                 case '3':
                     $ejecucion = $mesa->eliminar();
                     $mensaje = "Eliminado correctamente";
+                    $codigo = 3;
                     break;
                 default:
                     $mensaje = "Tipo de operación no válida";
@@ -29,7 +32,7 @@ try {
             http_response_code(200);
             echo json_encode([
                 "mensaje" => $mensaje,
-                "codigo" => 1,
+                "codigo" => $codigo,
             ]);
             break;
 

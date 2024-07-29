@@ -25,7 +25,7 @@ const getMesa = async (alerta = 'si') => {
         tablaMesa.tBodies[0].innerHTML = ''
         const fragment = document.createDocumentFragment()
         let contador = 1;
-        // console.log(data);
+        console.log(data);
         if (respuesta.status == 200) {
             if (alerta == 'si') {
                 Swal.mixin({
@@ -57,9 +57,9 @@ const getMesa = async (alerta = 'si') => {
                     const buttonEliminar = document.createElement('button')
 
                     celda1.innerText = contador;
-                    celda2.innerText = mesa.mesa_numero;
-                    celda3.innerText = mesa.mesa_capacidad;
-                    celda4.innerText = mesa.mesa_ubicacion;
+                    celda2.innerText = mesa.MESA_NUMERO;
+                    celda3.innerText = mesa.MESA_CAPACIDAD;
+                    celda4.innerText = mesa.MESA_UBICACION;
 
 
                     buttonModificar.textContent = 'Modificar'
@@ -70,7 +70,7 @@ const getMesa = async (alerta = 'si') => {
                     buttonEliminar.textContent = 'Eliminar'
                     buttonEliminar.classList.add('btn', 'btn-danger', 'w-100')
                     buttonEliminar.innerHTML = '<i class="bi bi-person-x-fill"></i>'
-                    buttonEliminar.addEventListener('click', () => EliminarClientes(mesa.mesa_id))
+                    buttonEliminar.addEventListener('click', () => EliminarMesas(mesa.MESA_ID))
 
                     celda5.appendChild(buttonModificar)
                     celda6.appendChild(buttonEliminar)
@@ -156,10 +156,10 @@ const guardarMesas = async (e) => {
 const llenarDatos = (mesa) => {
 
     // console.log(cliente)
-    formulario.mesa_id.value = mesa.mesa_id
-    formulario.mesa_numero.value = mesa.mesa_numero
-    formulario.mesa_capacidad.value = mesa.mesa_capacidad
-    formulario.mesa_ubicacion.value = mesa.mesa_ubicacion
+    formulario.mesa_id.value = mesa.MESA_ID
+    formulario.mesa_numero.value = mesa.MESA_NUMERO
+    formulario.mesa_capacidad.value = mesa.MESA_CAPACIDAD
+    formulario.mesa_ubicacion.value = mesa.MESA_UBICACION
     
 
     btnModificar.parentElement.style.display = ''
@@ -176,7 +176,7 @@ const ModificarMesas = async (e) => {
     e.preventDefault()
     btnModificar.disabled = true
 
-    const url = '/restaurante/controladores/mesas/index.php'
+    const url = '/restaurante_jimenez/controladores/mesas/index.php'
     const formData = new FormData(formulario)
     // console.log(formulario);
     formData.append('tipo', 2)

@@ -59,10 +59,10 @@ console.log(url)
                     const buttonEliminar = document.createElement('button')
 
                     celda1.innerText = contador;
-                    celda2.innerText = reservacion.reser_mesa;
-                    celda3.innerText = reservacion.reser_cliente;
-                    celda4.innerText = reservacion.reser_fecha;
-                    celda5.innerText = reservacion.reser_hora;
+                    celda2.innerText = reservacion.RESER_MESA;
+                    celda3.innerText = reservacion.RESER_CLIENTE;
+                    celda4.innerText = reservacion.RESER_FECHA;
+                    celda5.innerText = reservacion.RESER_HORA;
 
                     buttonModificar.textContent = 'Modificar'
                     buttonModificar.classList.add('btn', 'btn-warning', 'w-100')

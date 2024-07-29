@@ -31,7 +31,7 @@
                     <div class="col text-center">
                     <label for="mesa_ubicacion">Ubicacion de la Mesa</label>
                     <select name="mesa_ubicacion" id="mesa_ubicacion" class="form-select">
-                        <option select >Seleccione....</option>
+                        <option select value="" >Seleccione....</option>
                             <option value="Parte Frontal">Parte Frontal</option>
                             <option value="Primer Nivel">Primer Nivel</option>
                             <option value="Segundo Nivel">Segundo Nivel</option>

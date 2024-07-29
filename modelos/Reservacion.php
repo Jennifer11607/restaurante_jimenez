@@ -77,6 +77,7 @@ class Reservacion extends Conexion
         // $sql .= " AND cita_fecha = '$this->cita_fecha' ";
         // }
 
+        
         $resultado = self::servir($sql);
         return $resultado;
     }

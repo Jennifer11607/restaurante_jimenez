@@ -57,7 +57,7 @@ try {
             // http_response_code(200);
             $reservacion = new reservacion($_GET);
             $reservaciones = $reservacion->buscar();
-            echo json_encode($reservaciones);
+            echo json_encode($_GET);  //revisar que trae 
 
             break;            
 
