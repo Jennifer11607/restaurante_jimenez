@@ -35,7 +35,7 @@ console.log(url)
                     timer: 3000,
                     timerProgressBar: true,
                     icon: "success",
-                    title: 'Registros encontrados',
+                    title: 'Pacientes encontrados',
                     didOpen: (toast) => {
                         toast.onmouseenter = Swal.stopTimer;
                         toast.onmouseleave = Swal.resumeTimer;
@@ -94,7 +94,7 @@ console.log(url)
                 fragment.appendChild(tr)
             }
         } else {
-            console.log('error al cargar menu');
+            console.log('error al cargar menus');
         }
 
         tablaMenus.tBodies[0].appendChild(fragment)
@@ -307,6 +307,19 @@ const modificar = async(e) => {
     }
     btnModificar.disabled = false;
 
+    const llenardatos = (menu) => {
+
+        formulario.menu_id.value = menu.MENU_ID
+        formulario.menu_plato.value = menu.MENU_PLATO
+        formulario.menu_descripcion.value = menu.MENU_DESCRIPCION
+        formulario.menu_precio.value = menu.MENU_PRECIO
+        btnBuscar.parentElement.style.display = 'none'
+        btnGuardar.parentElement.style.display = 'none'
+        btnLimpiar.parentElement.style.display = 'none'
+        btnModificar.parentElement.style.display = ''
+        btnCancelar.parentElement.style.display = ''
+    
+    }
 
 }
 
@@ -362,10 +375,8 @@ const eliminar = async (menu) => {
                     showConfirmButton: false,
                     timer: 5000,
                 });
-
                 formulario.reset()
                 getMenus(alerta='no');
-
             } else {
                 console.log('Error:', detalle);
                 Swal.mixin({

@@ -4,11 +4,14 @@
 //error_reporting(E_ALL);?>
 
 
+
+
+
 <?php include_once '../../includes/header.php' ?>
 <?php include_once '../../includes/navbar.php'?>
 
 <div class="container" style="margin-top: 1cm; width: 29cm; border-radius: 1px;  ">
-    <h1 class="text-center" style="font-family: fantasy;">MENU NOMBRE</h1>
+    <h1 class="text-center" style="font-family: fantasy;">INGRESO MENU</h1>
     <div class="row justify-content-center mb-3">
     <div class="container mt-5">
         <div class="row justify-content-center">
@@ -24,7 +27,7 @@
                         <input type="text" name="menu_descripcion" id="menu_descripcion" class="form-control" required>
                     </div>
                     <div class="form-group text-center">
-                        <label for="menu_precio" class="form-label ">Precio</label>
+                        <label for="menu_precio" class="form-label ">Precio Q.</label>
                         <input type="number" name="menu_precio" id="menu_precio" class="form-control mb-2" required>
                     </div>
                     <div class="row">
@@ -52,12 +55,12 @@
     </div>
     <div class="row justify-content-center">
         <div class="col-lg-8 table-responsive">
-            <h2 class="text-center">Lista de Menu</h2>
+            <h2 class="text-center">Listado de Menu</h2>
             <table class="table table-bordered table-hover" id="tablaMenus">
                 <thead>
                     <tr>
                         <th>No.</th>
-                        <th>Nombre del Plato</th>
+                        <th>Plato</th>
                         <th>Descripcion</th>
                         <th>Precio Q.</th>
                         <th>Modificar</th>
@@ -74,7 +77,7 @@
     </div>
 </div>
 <script defer src="/restaurante_jimenez/src/js/funciones.js"></script>
-<script defer src="/restaurante_jimenez/src/js/clientes/index.js"></script>
+<script defer src="/restaurante_jimenez/src/js/menus/index.js"></script>
 <?php include_once '../../includes/footer.php' ?>
 
 
