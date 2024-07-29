@@ -8,36 +8,25 @@
 <?php include_once '../../includes/navbar.php'?>
 
 <div class="container" style="margin-top: 1cm; width: 29cm; border-radius: 1px;  ">
-    <h1 class="text-center" style="font-family: fantasy;">INGRESE LOS DATOS DE LA MESA QUE NECESITA</h1>
+    <h1 class="text-center" style="font-family: fantasy;">MENU NOMBRE</h1>
     <div class="row justify-content-center mb-3">
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-lg-8 form-container" >
                 <form>
-                    <input type="hidden" name="mesa_id" id="mesa_id">
+                    <input type="hidden" name="menu_id" id="menu_id">
                     <div class="form-group text-center">
-                        <label for="mesa_numero" class="form-label">¿Cuantas Mesas Necesita?</label>
-                        <input type="number" name="mesa_numero" id="mesa_numero" class="form-control " required>
+                        <label for="menu_plato" class="form-label">Nombre del Plato</label>
+                        <input type="text" name="menu_plato" id="menu_plato" class="form-control " required>
                     </div>
-                    
                     <div class="form-group text-center">
-                        <label for="mesa_capacidad" class="form-label">¿Para Cuantas Personas?</label>
-                        <input type="number" name="mesa_capacidad" id="mesa_capacidad" class="form-control" required>
+                        <label for="menu_descripcion" class="form-label">Descripcion</label>
+                        <input type="text" name="menu_descripcion" id="menu_descripcion" class="form-control" required>
                     </div>
-
                     <div class="form-group text-center">
-                    <div class="col text-center">
-                    <label for="mesa_ubicacion">Ubicacion de la Mesa</label>
-                    <select name="mesa_ubicacion" id="mesa_ubicacion" class="form-select">
-                        <option select >Seleccione....</option>
-                            <option value="Parte Frontal">Parte Frontal</option>
-                            <option value="Primer Nivel">Primer Nivel</option>
-                            <option value="Segundo Nivel">Segundo Nivel</option>
-                            <option value="Terraza">Terraza</option>
-                    </select>
+                        <label for="menu_precio" class="form-label ">Precio</label>
+                        <input type="number" name="menu_precio" id="menu_precio" class="form-control mb-2" required>
                     </div>
-                    </div>
-                    
                     <div class="row">
                         <div class="col text-center">
                             <button type="submit" id="btnGuardar" class="btn btn-primary btn-block btn-custom "><i class="bi bi-floppy"></i> Guardar</button>
@@ -63,21 +52,21 @@
     </div>
     <div class="row justify-content-center">
         <div class="col-lg-8 table-responsive">
-            <h2 class="text-center">Lista de Mesas</h2>
-            <table class="table table-bordered table-hover" id="tablaMesas">
+            <h2 class="text-center">Lista de Menu</h2>
+            <table class="table table-bordered table-hover" id="tablaMenus">
                 <thead>
                     <tr>
                         <th>No.</th>
-                        <th>No. de Mesas</th>
-                        <th>No. de personas</th>
-                        <th>Ubicacion</th>
+                        <th>Nombre del Plato</th>
+                        <th>Descripcion</th>
+                        <th>Precio Q.</th>
                         <th>Modificar</th>
                         <th>Eliminar</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td colspan="5">No hay Mesas</td>
+                        <td colspan="5">No hay Menu</td>
                     </tr>
                 </tbody>
             </table>
@@ -85,7 +74,7 @@
     </div>
 </div>
 <script defer src="/restaurante_jimenez/src/js/funciones.js"></script>
-<script defer src="/restaurante_jimenez/src/js/mesas/index.js"></script>
+<script defer src="/restaurante_jimenez/src/js/clientes/index.js"></script>
 <?php include_once '../../includes/footer.php' ?>
 
 

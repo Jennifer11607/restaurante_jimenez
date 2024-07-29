@@ -31,7 +31,7 @@ class Mesa extends Conexion
         $sql = "SELECT * from mesas where mesa_situacion = 1 ";
 
         if ($this->mesa_numero != '') {
-            $sql .= " and mesa_numero like '%$this->mesa_numero%' ";
+            $sql .= " and mesa_numero = '$this->mesa_numero=' ";
         }
 
         if ($this->mesa_capacidad != '') {
