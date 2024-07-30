@@ -24,9 +24,9 @@ try {
 <?php include_once '../../includes/navbar.php'?>
 
 <div class="container" style="margin-top: 1cm; width: 29cm; border-radius: 1px;  ">
-    <RVA class="text-center" style="font-family: fantasy;">FORMULARIO PARA INGRESAR RESERVACIONES</h1>
+    <h1 class="text-center">FORMULARIO PARA INGRESAR RESERVACIONES</h1>
     <div class="row justify-content-center mb-3">
-    <form class="col-lg-8 border p-3 " style="background-color: rgba(115, 198, 182 ); font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; ">
+    <form class="col-lg-5 border p-3 " style="background-color: darkgoldenrod;" >
     <input type="hidden" name="reser_id" id="reser_id">
     <div class="row mb-3">
                     <div class="col text-center">
@@ -90,7 +90,7 @@ try {
     <div class="row justify-content-center">
         <div class="col-lg-8 table-responsive">
             <h2 class="text-center">Listado de Citas</h2>
-            <table class="table table-bordered table-hover" id="tablaReservaciones">
+            <table class="table table-bordered table-hover" id="tablaReservaciones" style="background-color: darkgoldenrod;">
                 <thead>
                     <tr>
                             <th>NO.</th>

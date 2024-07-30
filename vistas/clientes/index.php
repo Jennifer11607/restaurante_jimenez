@@ -8,7 +8,7 @@
 <?php include_once '../../includes/navbar.php'?>
 
 <div class="container" style="margin-top: 1cm; width: 29cm; border-radius: 1px;  ">
-    <h1 class="text-center" style="font-family: Nunito, sans-serif; color:aliceblue;">CLIENTES</h1>
+    <h1 class="text-center" style="font-family: Nunito, sans-serif;">CLIENTES</h1>
     <div class="row justify-content-center mb-3">
     <div class="container mt-5">
         <div class="row justify-content-center">
@@ -51,9 +51,9 @@
 
     </div>
     <div class="row justify-content-center" >
-        <div class="col-lg-8 table-responsive" style="background: #f39c12;">
+        <div class="col-lg-8 table-responsive" >
             <h2 class="text-center">Lista de Clientes</h2>
-            <table class="table table-bordered table-hover" id="tablaClientes">
+            <table class="table table-bordered table-hover" id="tablaClientes" style="background: darkgoldenrod">
                 <thead>
                     <tr>
                         <th>No.</th>

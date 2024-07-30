@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,23 +8,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jersey+25&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-    <title>Restaurante El Sabor</title>
+    <title>Restaurante BurguerGirl</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <style>
 
 body {
-    font-family: "Nunito", sans-serif;
-    background-image: url(restaurante_jimenez/images/burger.jpg);
+    background-image: url('/restaurante_jimenez/images/burger.jpg');
+   background-size: cover;
+   background-position: center center;
+   height: calc(100vh - 80px);
+   font-family: "Nunito", sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background-size: cover;
-    background-position: center center;
-    height: calc(100vh - 80px);
+
 }
 
 header {
@@ -48,7 +51,7 @@ main {
     max-width: 800px;
     margin: 20px;
     padding: 20px;
-    background-color: white;
+    
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
@@ -56,10 +59,10 @@ main {
 .todo{
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 25%;
     transform: translate(-50%, -50%);
 
-    background: rgba(248, 246, 240, 0.641);
+
     border-radius: 10px;
     font-family: "Nunito", sans-serif;
 }
@@ -160,9 +163,41 @@ footer {
     text-align: center;
 }
 
+h1 {
+            color: white;
+            transition: all 0.3s ease;
+            font-family: fantasy;
+            text-align: right;
+            margin:auto;
+        }
+        h1:hover {
+            color: orange;
+            font-size: 2.5rem; /* Aumenta el tamaño de la fuente al pasar el mouse */
+        }
+        h2 {
+            color: white;
+            transition: all 0.3s ease;
+            font-family: "Nunito", sans-serif;
+        }
+        h2:hover {
+            color: orange;
+            font-size: 2.5rem; /* Aumenta el tamaño de la fuente al pasar el mouse */
+        }
+
+        p {
+            font-family: "Nunito", sans-serif;
+            color: white;
+            text-align: right;
+        }
+        .parrafo{
+            text-align: center;
+        }
 
 </style>
 <body>
+
+<?php include_once '../../includes/header.php' ?>
+<?php include_once '../../includes/navbar.php'?>
     <header>
         <h1>Bienvenido a Restaurante BurgesGirl</h1>
         <p>Deliciosas Hamburguesas, excelente ambiente y servicio de primera</p>
@@ -170,12 +205,12 @@ footer {
     <main class="todo">
         <section class="description">
             <h2>Sobre Nosotros</h2>
-            <p>En Restaurante El Sabor, nos dedicamos a ofrecer la mejor experiencia culinaria con ingredientes frescos y recetas tradicionales. ¡Visítanos y descubre nuestro menú exquisito!</p>
+            <p class="parrafo">En Restaurante El Sabor, nos dedicamos a ofrecer la mejor experiencia culinaria con ingredientes frescos y recetas tradicionales. ¡Visítanos y descubre nuestro menú exquisito!</p>
         </section>
         <section class="buttons">
             <h2>Explora Nuestra Página</h2>
             <button onclick="window.location.href='menu.html'">Menú</button>
-            <button onclick="window.location.href='reservaciones.html'">Reservaciones</button>
+            <button onclick="window.location.href='/restaurante_jimenez/vistas/reservaciones/index.php'">Reservaciones</button>
             <button onclick="window.location.href='contacto.html'">Contacto</button>
         </section>
         <section class="social-media">
@@ -188,7 +223,7 @@ footer {
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 Restaurante El Sabor. Todos los derechos reservados.</p>
+        <p class="parrafo">&copy; 2024 Restaurante El Sabor. Todos los derechos reservados Jennifer Jimenez.</p>
     </footer>
 </body>
 </html>

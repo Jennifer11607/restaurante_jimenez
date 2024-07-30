@@ -63,7 +63,7 @@ class Reservacion extends Conexion
     public function mostrarInformacion(...$columnas)
     {
         $cols = count($columnas) > 0 ? implode(',', $columnas) : '*';
-        $sql = "SELECT UNIQUE cli_nombre, cli_apellido, cli_telefono, reser_hora, mesa_numero 
+        $sql = "SELECT UNIQUE cli_nombre, cli_apellido, cli_telefono, reser_hora, reser_fecha, mesa_numero, mesa_capacidad, mesa_ubicacion 
             FROM reservaciones
              INNER JOIN mesas ON reser_mesa = mesa_id
              INNER JOIN clientes ON reser_cliente = cli_id

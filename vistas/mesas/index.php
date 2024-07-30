@@ -15,7 +15,7 @@
     <div class="row justify-content-center mb-3">
     <div class="container mt-5">
         <div class="row justify-content-center">
-            <div class="col-lg-8 form-container" >
+            <div class="col-lg-5 form-container" >
                 <form>
                     <input type="hidden" name="mesa_id" id="mesa_id">
                     <div class="form-group text-center">
@@ -67,7 +67,7 @@
     <div class="row justify-content-center">
         <div class="col-lg-8 table-responsive">
             <h2 class="text-center">Listado de Menu</h2>
-            <table class="table table-bordered table-hover" id="tablaMesas">
+            <table class="table table-bordered table-hover" id="tablaMesas" style="background-color: darkgoldenrod;">
                 <thead>
                     <tr>
                         <th>No.</th>

@@ -30,11 +30,13 @@ body {
             margin-right: 10px;
         }
 
-.form-container {
-            background-color: #a2d9ce ;
+        /* decoracion formulario */
+        .form-container {
+            background-color: darkgoldenrod ;
             border-radius: 8px;
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-family: "Nunito", sans-serif;
         }
         .btn-custom {
             transition: all 0.3s ease;
@@ -97,7 +99,32 @@ body {
     background-color: #ffc107; /* Color de fondo de hover */
 }
 
+/* efectos para h1 */
+h1 {
+            color: white;
+            transition: all 0.3s ease;
+            font-family: fantasy;
+        }
+        h1:hover {
+            color: orange;
+            font-size: 2.5rem; /* Aumenta el tamaño de la fuente al pasar el mouse */
+        }
 
+        h2 {
+            color: white;
+            transition: all 0.3s ease;
+            font-family: fantasy;
+        }
+        h2:hover {
+            color: orange;
+            font-size: 2.5rem; /* Aumenta el tamaño de la fuente al pasar el mouse */
+        }
+
+label{
+    color: black;
+    transition: all 0.3s ease;
+    font-family: fantasy;
+}
 </style>
 
 
