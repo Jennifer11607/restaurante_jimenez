@@ -59,28 +59,24 @@ class Reservacion extends Conexion
         return $resultado;
     }
 
-    //buscar citas
+    //funcion para imprimir datos 
     public function mostrarInformacion(...$columnas)
     {
         $cols = count($columnas) > 0 ? implode(',', $columnas) : '*';
-        $sql = "SELECT UNIQUE reser_cliente ,reser_id, reser_mesa, reser_fecha, reser_hora, reser_situacion FROM reservaciones
-        INNER JOIN mesas ON cita_mesa = mesa_id
-        INNER JOIN clientes ON cita_cliente = cliente_id
-        inner join clinicas on clinica_id = cliente_clinica
-        where cita_situacion = 1";
-
-        if ($this->reser_cliente != '') {
-            $sql .= " AND reser_cliente = $this->reser_cliente ";
-        }
-
-        // if ($this->cita_fecha != '') {
-        // $sql .= " AND cita_fecha = '$this->cita_fecha' ";
-        // }
-
-
+        $sql = "SELECT UNIQUE cli_nombre, cli_apellido, cli_telefono, reser_hora, mesa_numero 
+            FROM reservaciones
+             INNER JOIN mesas ON reser_mesa = mesa_id
+             INNER JOIN clientes ON reser_cliente = cli_id
+             WHERE reser_situacion = 1";
+    
         $resultado = self::servir($sql);
         return $resultado;
     }
+
+
+    ////    public function mostrarInformacion(...$columnas)
+   
+
 
     public function modificar()
     {

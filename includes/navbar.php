@@ -1,4 +1,4 @@
-<nav class="navbar navbar-dark navbar-expand-lg bg-warning text-center" style="font-family: fantasy;">
+<nav class="navbar navbar-dark navbar-expand-lg bg-dark text-center" id="navbar">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPrincipal" aria-controls="navbarPrincipal" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -7,34 +7,32 @@
                 <a class="navbar-brand mx-auto" href="#"><i class="bi bi-hospital"></i>  BURGESGIRL</a>
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/restaurante_jimenez/html/usuario.php"><i class="bi bi-house-fill"></i> INICIO</a>
+                        <a class="nav-link active" aria-current="page" href="/restaurante_jimenez/html/burger.php"><i class="bi bi-house-fill"></i> INICIO</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/final_hospital_js/zulu/inicio.php"><i class="bi bi-house-fill"></i> CLIENTES</a>
+                        <a class="nav-link active" aria-current="page" href="/restaurante_jimenez/html/usuario.php"><i class="bi bi-house-fill"></i> REGISTRATE</a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/restaurante_jimenez/vistas/clientes/index.php"><i class="bi bi-house-fill"></i> CLIENTES</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/restaurante_jimenez/vistas/mesas/index.php"><i class="bi bi-house-fill"></i> MESA</a>
+                    </li>         
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-gear-wide-connected"></i> MANTENIMIENTOS
+                        <i class="bi bi-gear-wide-connected"></i> RESERVACION
                         </a>
                         <ul class="dropdown-menu bg-dark">
                             <li class="nav-item">
-                                <a class="nav-link" href="/final_hospital_js/vistas/pacientes/index.php"><i class="bi bi-person-arms-up"></i> PACIENTES</a>
+                                <a class="nav-link" href="/restaurante_jimenez/vistas/reservaciones/index.php"> INGRESAR RESERVACION </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/final_hospital_js/vistas/especialidades/index.php"><i class="bi bi-heart-pulse-fill"></i></i> ESPECIALIDADES</a>
+                                <a class="nav-link" href="/restaurante_jimenez/vistas/detalles/index.php">DETALLES DE LA RESERVACION</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/final_hospital_js/vistas/clinicas/index.php"><i class="bi bi-prescription2"></i></i> CLINICAS</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/final_hospital_js/vistas/medicos/index.php"><i class="bi bi-capsule"></i> MEDICOS</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/final_hospital_js/vistas/citas/index.php"><i class="bi bi-clipboard2-pulse-fill"></i> CITAS</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/final_hospital_js/vistas/detalles/index.php"><i class="bi bi-filetype-pdf"></i> IMPRIMIR CITAS</a>
-                            </li>
+                            
                         </ul>
                     </li>
                 </ul>

@@ -7,11 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jersey+25&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <title>RESTAURANT "BURGERSGIRL"</title>
 </head>
-<body>
-
 <style>
+
+body {
+   
+
+   background-image: url('/restaurante_jimenez/images/burger.jpg');
+   background-size: cover;
+   background-position: center center;
+   height: calc(100vh - 80px);
+   font-family: "Nunito", sans-serif;
+}
+
 
 .navbar-brand img {
             height: 40px; /* Ajusta el tamaño de la imagen según tus necesidades */
@@ -42,14 +54,14 @@
     position: absolute;
     right: 0;
     left: auto;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Nunito", sans-serif;
     text-align: center;
     font-size: 17px;
 }
 
 .navbar .navbar-brand, .navbar .nav-link {
-    color: white;
-    font-family: 'Courier New', Courier, monospace;
+    color: #f39c12; 
+    font-family: "Nunito", sans-serif;  
     font-size: 23px;
 }
 
@@ -86,10 +98,9 @@
 }
 
 
-
-
 </style>
 
 
+<body>
 
-</body>
+
