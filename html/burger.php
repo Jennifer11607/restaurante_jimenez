@@ -193,11 +193,20 @@ h1 {
             text-align: center;
         }
 
+        button {
+            color: white;
+            transition: all 0.3s ease;
+            font-family: "Nunito", sans-serif;
+            text-align: right;
+            margin:auto;
+        }
+        button:hover {
+            color: orange;
+            font-size: 2.5rem; /* Aumenta el tamaño de la fuente al pasar el mouse */
+        }
 </style>
 <body>
 
-<?php include_once '../../includes/header.php' ?>
-<?php include_once '../../includes/navbar.php'?>
     <header>
         <h1>Bienvenido a Restaurante BurgesGirl</h1>
         <p>Deliciosas Hamburguesas, excelente ambiente y servicio de primera</p>
@@ -209,9 +218,13 @@ h1 {
         </section>
         <section class="buttons">
             <h2>Explora Nuestra Página</h2>
-            <button onclick="window.location.href='menu.html'">Menú</button>
+            <button onclick="window.location.href='/restaurante_jimenez/vistas/clientes/index.php'">Clientes</button>
+            <button onclick="window.location.href='/restaurante_jimenez/vistas/mesa/index.php'">Mesa</button>
             <button onclick="window.location.href='/restaurante_jimenez/vistas/reservaciones/index.php'">Reservaciones</button>
-            <button onclick="window.location.href='contacto.html'">Contacto</button>
+            <button onclick="window.location.href='/restaurante_jimenez/html/usuario.php'">Registrarse</button><br>
+            <button onclick="window.location.href='/restaurante_jimenez/vistas/detalles/index.php'">ver Reservacion</button>
+
+
         </section>
         <section class="social-media">
             <h2>Síguenos en Redes Sociales</h2>
